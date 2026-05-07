@@ -1,5 +1,5 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+pub fn get_map() -> rosu_map::Beatmap {
+    rosu_map::from_path("./assets/test/mania_beatmap.osu").unwrap()
 }
 
 #[cfg(test)]
@@ -8,7 +8,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        let result = get_map();
+        assert_eq!(result.artist, "Aiobahn +81");
     }
 }
